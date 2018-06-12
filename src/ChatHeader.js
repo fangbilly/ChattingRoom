@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 
 
-class ChatHeader extends Component {
-    render() {
+const ChatHeader = () =>{
       return (
         <div className='ChatHeader' >
             <div className="roomInfo">
@@ -13,6 +12,6 @@ class ChatHeader extends Component {
         </div>   
       )
     }
-}
+
 
 export default ChatHeader
