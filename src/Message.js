@@ -1,13 +1,72 @@
 import React from 'react'
+import Avatar from './Avatar'
 
 
 
 const Message = (props) =>{
     return (
-        <div className='Message' >
-            {props.Message.userName}:{props.Message.body}
+        <div 
+            className='Message'
+            style={styles.Message} >
+            <Avatar/>
+            <div 
+                className='detials'
+                style={styles.details}
+                >
+                <div 
+                    className='Metadata'
+                    style={styles.Metadata}
+                    >
+                    <div 
+                        class="user"
+                        style={styles.user}
+                        >
+                        {props.Message.userName}
+                    </div>
+
+                    <div 
+                        class="time"
+                        style={styles.time}
+                        >
+                        {new Date().toLocaleString()}
+                    </div>
+                </div>
+                <div className='body'>
+                    {props.Message.body}
+                </div>
+            </div> 
+           
+
         </div>   
       )
+    }
+
+    const styles={
+        Message: {
+            display: 'flex',
+            marginTop: '1rem',
+            padding: '0 1rem',
+        },
+
+        details: {
+            flex: 1,
+            paddingLeft: '0.5rem',
+        },
+        
+        Metadata: {
+            display: 'flex',
+            alignItems: 'baseline',
+        },
+
+        user: {
+            fontWeight: 'bold',
+            marginRight: '0.5rem',
+        },
+
+        time: {
+            color:' #999',
+            fontSize: '0.8rem',
+        },
     }
 
     

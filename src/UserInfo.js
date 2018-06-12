@@ -33,8 +33,6 @@ const styles={
         backgroundImage: `url(${imgUrl} )`,
         height: '40px',
         width: '40px',
-        mozBorderRadius: '20px',
-        webkitBorderRadius: '20px',
         borderRadius: '20px',
     },
 
