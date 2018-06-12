@@ -1,4 +1,5 @@
 import React from 'react'
+import UserInfo from './UserInfo';
 
 
 
@@ -9,20 +10,12 @@ const Sidebar =(props)=> {
       className="Sidebar"
       style={styles.sidebar}
       >
-      <div 
-        className="UserInfo"
-        style={styles.children}
-        >
-        <div className="Avatar"></div>
-        <div className="user">
-          {props.user.userName}
-        </div>
-        <a href="#">
-          <i className="fas fa-sign-out-alt"></i>
-        </a>
-      </div>
+      <UserInfo user={props.user} style={styles.children}/>
       <h1 
-        style={{...styles.children,...styles.h1}}
+        style={{
+          ...styles.children,
+          ...styles.h1
+        }}
         >
         XTBC 18
         </h1>

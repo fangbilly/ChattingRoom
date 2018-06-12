@@ -1,0 +1,48 @@
+import React from 'react'
+
+
+
+const UserInfo = (props) =>{
+    return (
+        <div 
+            className="UserInfo"
+            style={styles.UserInfo}
+            >
+            <div className="Avatar" style={styles.Avatar} ></div>
+            <div className="user" style={styles.user} >
+                {props.user.userName}
+            </div>
+            <a href="#">
+            <i className="fas fa-sign-out-alt" style={styles.a} ></i>
+            </a>
+      </div> 
+      )
+}
+
+const styles={
+    UserInfo:{
+        marginBottom: '1rem',
+        display: 'flex',
+        alignItems: 'center',
+    },
+
+    Avatar:{
+        marginTight: '0.5rem',
+    },
+
+    user:{
+        flex: 1,
+    },
+
+    a:{
+        border: 0,
+        padding: 0,
+        backgroundColor:' transparent',
+        color: 'rgba(255, 255, 255, 0.6)',
+        fontSize: '1.2rem',
+        transition: 'color 0.25s ease-out',
+    }
+
+}
+    
+export default UserInfo
