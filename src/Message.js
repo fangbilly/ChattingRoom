@@ -6,8 +6,6 @@ const Message = (props) =>{
     return (
         <div className='Message' >
             {props.Message.userName}:{props.Message.body}
-          
-        
         </div>   
       )
     }
