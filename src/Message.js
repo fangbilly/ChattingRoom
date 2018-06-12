@@ -18,14 +18,14 @@ const Message = (props) =>{
                     style={styles.Metadata}
                     >
                     <div 
-                        class="user"
+                        className="user"
                         style={styles.user}
                         >
                         {props.Message.userName}
                     </div>
 
                     <div 
-                        class="time"
+                        className="time"
                         style={styles.time}
                         >
                         {new Date().toLocaleString()}
