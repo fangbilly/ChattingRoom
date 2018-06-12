@@ -11,7 +11,7 @@ class Chat extends Component {
         this.state={
             messages:[
                 {id:1, userName:'billy', body:'yoyo' },
-                {id:2, userName:'miku',body:'what is dinner'},
+                {id:2, userName:'miku',body:'what\'s for dinner'},
             ],
         }
     }
