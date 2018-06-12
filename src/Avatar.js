@@ -6,20 +6,18 @@ const Avatar = (props) =>{
     return (
         <div 
             className='Avatar'
-            style={styles}
+            style={{...styles,backgroundImage: `url(${props.imgUrl} )`,}}
              >
         </div>   
       )
     }
 
-    const imgUrl = 'https://api.adorable.io/avatars/32/nicole@yahoo.com'
 
     const styles={
         height: '40px',
         width: '40px',
         fontSize: '1rem',
-        borderRadius: '20px',
-        backgroundImage: `url(${imgUrl} )`,
+        borderRadius: '20px',        
     }
     
 export default Avatar

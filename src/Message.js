@@ -8,7 +8,7 @@ const Message = (props) =>{
         <div 
             className='Message'
             style={styles.Message} >
-            <Avatar/>
+            <Avatar imgUrl={props.Message.imgUrl} />
             <div 
                 className='detials'
                 style={styles.details}

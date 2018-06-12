@@ -8,7 +8,7 @@ const UserInfo = (props) =>{
             className="UserInfo"
             style={{...styles.UserInfo,...props.style}}
             >
-            <div className="Avatar" style={styles.Avatar} ></div>
+            <div className="Avatar" style={{...styles.Avatar,backgroundImage: `url(${props.user.imgUrl})`,}} ></div>
             <div className="user" style={styles.user} >
                 {props.user.userName}
             </div>
@@ -19,7 +19,6 @@ const UserInfo = (props) =>{
       )
 }
 
-const imgUrl = 'https://api.adorable.io/avatars/32/davey@getfretless.com'
 
 const styles={
     UserInfo:{
@@ -30,7 +29,6 @@ const styles={
 
     Avatar:{
         marginRight: '0.5rem',
-        backgroundImage: `url(${imgUrl} )`,
         height: '40px',
         width: '40px',
         borderRadius: '20px',

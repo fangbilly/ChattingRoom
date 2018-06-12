@@ -9,6 +9,7 @@ class App extends Component {
     user:{
       uid:'No.89757',
       userName:'JJ Lin',
+      imgUrl:'https://api.adorable.io/avatars/32/miles@mileszs.com',
     },
   }
 
