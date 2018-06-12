@@ -10,7 +10,7 @@ class Main extends Component {
         <div className='Main' style={styles} >
             <Sidebar/>
             <Chat/>
-            </div>    
+        </div>    
       )
     }
 }
