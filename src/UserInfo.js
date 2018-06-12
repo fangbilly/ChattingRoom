@@ -6,7 +6,7 @@ const UserInfo = (props) =>{
     return (
         <div 
             className="UserInfo"
-            style={styles.UserInfo}
+            style={{...styles.UserInfo,...props.style}}
             >
             <div className="Avatar" style={styles.Avatar} ></div>
             <div className="user" style={styles.user} >
@@ -19,6 +19,8 @@ const UserInfo = (props) =>{
       )
 }
 
+const imgUrl = 'https://api.adorable.io/avatars/32/davey@getfretless.com'
+
 const styles={
     UserInfo:{
         marginBottom: '1rem',
@@ -27,7 +29,13 @@ const styles={
     },
 
     Avatar:{
-        marginTight: '0.5rem',
+        marginRight: '0.5rem',
+        backgroundImage: `url(${imgUrl} )`,
+        height: '40px',
+        width: '40px',
+        mozBorderRadius: '20px',
+        webkitBorderRadius: '20px',
+        borderRadius: '20px',
     },
 
     user:{
