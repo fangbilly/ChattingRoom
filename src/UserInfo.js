@@ -12,9 +12,11 @@ const UserInfo = (props) =>{
             <div className="user" style={styles.user} >
                 {props.user.userName}
             </div>
-            <a href="#">
-            <i className="fas fa-sign-out-alt" style={styles.a} ></i>
-            </a>
+            {/* <a href="#"> */}
+            <button style={styles.a}>
+                <i className="fas fa-sign-out-alt"  ></i>
+            </button>
+            {/* </a> */}
       </div> 
       )
 }
