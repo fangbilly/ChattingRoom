@@ -1,10 +1,10 @@
 import React, {Component}  from 'react'
-
+import { StyleSheet, css } from 'aphrodite'
 
 
 class UserInfo extends Component {
     handleClick =(ev) =>{
-        debugger
+        
         this.props.signOut()
         
 
@@ -13,15 +13,15 @@ class UserInfo extends Component {
     render(){
     return (
         <div 
-            className="UserInfo"
+        className={css(styles.UserInfo)}
             style={{...styles.UserInfo,...this.props.style}}
             >
-            <div className="Avatar" style={{...styles.Avatar,backgroundImage: `url(${this.props.user.imgUrl})`,}} ></div>
-            <div className="user" style={styles.user} >
+            <div className={css(styles.Avatar)} style={{...styles.Avatar,backgroundImage: `url(${this.props.user.imgUrl})`,}} ></div>
+            <div className={css(styles.user)} style={styles.user} >
                 {this.props.user.userName}
             </div>
             {/* <a href="#"> */}
-            <button style={styles.a} onClick={this.handleClick.bind(this)} >
+            <button className={css(styles.button)} onClick={this.handleClick.bind(this)} >
                 <i className="fas fa-sign-out-alt"  ></i>
             </button>
             {/* </a> */}
@@ -31,7 +31,7 @@ class UserInfo extends Component {
 }
 
 
-const styles={
+const styles=  StyleSheet.create({
     UserInfo:{
         marginBottom: '1rem',
         display: 'flex',
@@ -49,15 +49,18 @@ const styles={
         flex: 1,
     },
 
-    a:{
+    button:{
         border: 0,
         padding: 0,
         backgroundColor:' transparent',
         color: 'rgba(255, 255, 255, 0.6)',
         fontSize: '1.2rem',
         transition: 'color 0.25s ease-out',
+        ':hover': {
+            color: 'white',
+        },
     }
 
-}
+})
     
 export default UserInfo

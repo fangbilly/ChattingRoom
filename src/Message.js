@@ -29,7 +29,6 @@ const Message = (props) =>{
                         style={styles.time}
                         >
                         {props.Message.messageTime}
-                        {/* /bug: refresh time all together */}
                     </div>
                 </div>
                 <div className='body'>
