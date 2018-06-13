@@ -29,6 +29,7 @@ const Message = (props) =>{
                         style={styles.time}
                         >
                         {new Date().toLocaleString()}
+                        {/* /bug: refresh time all together */}
                     </div>
                 </div>
                 <div className='body'>
