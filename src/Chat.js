@@ -10,8 +10,20 @@ class Chat extends Component {
         super()
         this.state={
             messages:[
-                {id:1, userName:'Dana',body:'what\'s for dinner',imgUrl:'https://api.adorable.io/avatars/32/dana@fretless.com'},
-                {id:2, userName:'Davey', body:'yoyo',imgUrl: 'https://api.adorable.io/avatars/32/davey@getfretless.com'},
+                {
+                    id:1, 
+                    userName:'Dana',
+                    body:'what\'s for dinner',
+                    imgUrl:'https://api.adorable.io/avatars/32/dana@fretless.com',
+                    messageTime:'6/13/2018, 9:32:59 AM',
+                },
+                {
+                    id:2, 
+                    userName:'Davey', 
+                    body:'yoyo',
+                    imgUrl: 'https://api.adorable.io/avatars/32/davey@getfretless.com',
+                    messageTime:'6/13/2018, 9:33:29 AM',
+                },
                
             ],
         }
@@ -25,6 +37,7 @@ class Chat extends Component {
                 userName:this.props.user.userName,
                 body,
                 imgUrl:this.props.user.imgUrl,
+                messageTime:new Date().toLocaleString(),
             },
         )
         this.setState({messages})
