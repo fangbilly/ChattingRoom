@@ -10,6 +10,7 @@ class SignInForm extends Component{
     handleSubmit =(ev) =>{
         
         ev.preventDefault()
+        this.setState({imgUrl:`https://api.adorable.io/avatars/40/${this.state.userName}`})
         this.props.signIn(this.state.userName,this.state.imgUrl)
         this.setState({userName:''})
 
@@ -30,7 +31,7 @@ class SignInForm extends Component{
                 className="signInIcon" 
                 style={styles.signInIcon} 
                 >
-                <i className="fas fa-sign-in-alt"></i>
+                <i className="fab fa-first-order"></i>
             </div>
             <input 
                 type='text' 
@@ -44,7 +45,7 @@ class SignInForm extends Component{
                 type='submit' 
                 style={styles.button}
                 >
-                <i className="far fa-paper-plane" title="SignIn"></i>
+                <i className="fas fa-sign-in-alt" title="SignIn"></i>
             </button>
 
         </form>   
@@ -69,7 +70,7 @@ const styles={
         borderRadius: '0.5rem',
         alignItems: 'center',
         backgroundColor: 'white',
-        color: '#ccc',
+        color: 'black',
         padding: '0 0.5rem',
         fontSize:' 1.2rem',
     },

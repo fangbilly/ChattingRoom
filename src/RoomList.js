@@ -40,7 +40,7 @@ const RoomList = (props) =>{
               },
             
               '::before': {
-                content: '"#"',
+                content: '"# "',
               },
 
         },

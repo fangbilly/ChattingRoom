@@ -38,21 +38,20 @@ signOut= ()=>{
 }
 
   render() {
-    if(this.state.signInStatus){
-    return (
+       return (
       <div className="App">
-          <Main user={this.state.currentUser} signOut={this.signOut}/>
+      {
+        this.state.signInStatus
+        ?<Main user={this.state.currentUser} signOut={this.signOut}/>
+        :<div className="AppSignIn">
+            <h1 style={{margin:30,}} >SignIn:</h1>
+            <SignInForm signIn={this.signIn} /> 
+          </div>
+      }
       </div>
     )}
-    else{
-      return(
-        <div className="App">
-          <h1 style={{margin:30,}} >SignIn:</h1>
-          <SignInForm signIn={this.signIn} />
-      </div>
-      )
-    }
-  }
+   
+
 }
 
 export default App
