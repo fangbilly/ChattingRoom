@@ -13,7 +13,7 @@ class UserInfo extends Component {
     render(){
     return (
         <div 
-        className={css(styles.UserInfo)}
+            className={css(styles.UserInfo)}
             style={{...styles.UserInfo,...this.props.style}}
             >
             <div className={css(styles.Avatar)} style={{...styles.Avatar,backgroundImage: `url(${this.props.user.imgUrl})`,}} ></div>

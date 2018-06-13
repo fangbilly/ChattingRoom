@@ -1,21 +1,22 @@
 import React from 'react'
+import { StyleSheet, css } from 'aphrodite'
 
 const RoomList = (props) =>{
       return (
         <nav 
-            className="RoomList"
+            className={css(styles.RoomList)}
             style={props.style}
             >
-            <h2 style={styles.h2} >Rooms</h2>
-            <ul style={styles.ul}>
-            <li style={styles.li}><a href="#" style={styles.a}>general</a></li>
-            <li style={styles.li}><a href="#" style={styles.a}>random</a></li>
+            <h2 className={css(styles.h2)} style={styles.h2} >Rooms</h2>
+            <ul className={css(styles.ul)}  style={styles.ul}>
+            <li className={css(styles.li)}  style={styles.li}><a href="#" className={css(styles.a)}    style={styles.a}>general</a></li>
+            <li className={css(styles.li)}  style={styles.li}><a href="#" className={css(styles.a)}    style={styles.a}>random</a></li>
             </ul>
         </nav>
         )
     }
 
-    const styles={
+    const styles=  StyleSheet.create({
         h2:{
             fontSize: '1rem',
         },
@@ -34,8 +35,16 @@ const RoomList = (props) =>{
             display: 'block',
             color: 'whitesmoke',
             textDecoration:' none',
+            ':hover': {
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+              },
+            
+              '::before': {
+                content: '"#"',
+              },
+
         },
 
-    }
+    })
     
 export default RoomList
