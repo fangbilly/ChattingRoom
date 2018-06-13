@@ -9,16 +9,15 @@ class App extends Component {
   state={
     signInStatus:false,
     currentUser:{},
-        
-    // user:{
-    //   uid:'No.89757',
-    //   userName:'JJ Lin',
-    //   imgUrl:'https://api.adorable.io/avatars/32/miles@mileszs.com',
-    // },
+    
   }
 
-  componentWillMount(){
+  componentWillMount() {
     const user = JSON.parse(localStorage.getItem('user'))
+
+    if (user) {
+      this.setState({ currentUser:user })
+    }
   }
 
   signIn= (userName,imgUrl)=>{
