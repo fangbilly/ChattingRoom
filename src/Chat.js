@@ -20,7 +20,7 @@ class Chat extends Component {
                 {
                     id:2, 
                     userName:'Davey', 
-                    body:'yoyo',
+                    body:'wut abot spellbork?',
                     imgUrl: 'https://api.adorable.io/avatars/32/davey@getfretless.com',
                     messageTime:'6/13/2018, 9:33:29 AM',
                 },

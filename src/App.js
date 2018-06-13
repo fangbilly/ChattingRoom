@@ -17,17 +17,21 @@ class App extends Component {
     // },
   }
 
+  componentWillMount(){
+    const user = JSON.parse(localStorage.getItem('user'))
+  }
+
   signIn= (userName,imgUrl)=>{
     const currentUser = {
       userID:Date.now(),
       userName,
       imgUrl,
     }
-    
     this.setState({
       currentUser,
       signInStatus:true,    
     })
+    localStorage.setItem('user',JSON.stringify(currentUser))
 }
 
 signOut= ()=>{
@@ -35,6 +39,7 @@ signOut= ()=>{
     currentUser:{},
     signInStatus:false,  
   })
+  localStorage.removeItem('user')
 }
 
   render() {
