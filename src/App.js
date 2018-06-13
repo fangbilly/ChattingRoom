@@ -7,7 +7,7 @@ import SignInForm from './SignIn'
 
 class App extends Component {
   state={
-    signIn:false,
+    signInStatus:false,
     currentUser:{},
         
     // user:{
@@ -26,16 +26,22 @@ class App extends Component {
     
     this.setState({
       currentUser,
-      signIn:true,
-    
+      signInStatus:true,    
     })
 }
 
+signOut= ()=>{
+  this.setState({
+    currentUser:{},
+    signInStatus:false,  
+  })
+}
+
   render() {
-    if(this.state.signIn){
+    if(this.state.signInStatus){
     return (
       <div className="App">
-          <Main user={this.state.currentUser}/>
+          <Main user={this.state.currentUser} signOut={this.signOut}/>
       </div>
     )}
     else{

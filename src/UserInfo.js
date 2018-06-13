@@ -1,24 +1,33 @@
-import React from 'react'
+import React, {Component}  from 'react'
 
 
 
-const UserInfo = (props) =>{
+class UserInfo extends Component {
+    handleClick =(ev) =>{
+        debugger
+        this.props.signOut()
+        
+
+    }
+
+    render(){
     return (
         <div 
             className="UserInfo"
-            style={{...styles.UserInfo,...props.style}}
+            style={{...styles.UserInfo,...this.props.style}}
             >
-            <div className="Avatar" style={{...styles.Avatar,backgroundImage: `url(${props.user.imgUrl})`,}} ></div>
+            <div className="Avatar" style={{...styles.Avatar,backgroundImage: `url(${this.props.user.imgUrl})`,}} ></div>
             <div className="user" style={styles.user} >
-                {props.user.userName}
+                {this.props.user.userName}
             </div>
             {/* <a href="#"> */}
-            <button style={styles.a}>
+            <button style={styles.a} onClick={this.handleClick.bind(this)} >
                 <i className="fas fa-sign-out-alt"  ></i>
             </button>
             {/* </a> */}
       </div> 
       )
+    }
 }
 
 

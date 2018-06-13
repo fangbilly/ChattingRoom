@@ -11,7 +11,7 @@ const Sidebar =(props)=> {
       className="Sidebar"
       style={styles.sidebar}
       >
-      <UserInfo user={props.user} style={styles.children}/>
+      <UserInfo user={props.user} style={styles.children} signOut={props.signOut}/>
       <h1 
         style={{
           ...styles.children,
