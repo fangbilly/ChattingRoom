@@ -10,8 +10,9 @@ class Chat extends Component {
         super()
         this.state={
             messages:[
-                {id:1, userName:'billy', body:'yoyo',imgUrl: 'https://api.adorable.io/avatars/32/davey@getfretless.com'},
-                {id:2, userName:'miku',body:'what\'s for dinner',imgUrl:'https://api.adorable.io/avatars/32/dana@fretless.com'},
+                {id:1, userName:'Dana',body:'what\'s for dinner',imgUrl:'https://api.adorable.io/avatars/32/dana@fretless.com'},
+                {id:2, userName:'Davey', body:'yoyo',imgUrl: 'https://api.adorable.io/avatars/32/davey@getfretless.com'},
+               
             ],
         }
     }

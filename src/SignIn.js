@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 class SignInForm extends Component{
     state={
         userName:'',
-        imgUrl:'',
+        imgUrl:'https://api.adorable.io/avatars/32/miles@mileszs.com',
      
     }
 
@@ -24,6 +24,7 @@ class SignInForm extends Component{
         <form 
             className='SignInForm'
             onSubmit ={this.handleSubmit}
+            style={styles.SignInForm}
                          >
             userName:
             <input 
