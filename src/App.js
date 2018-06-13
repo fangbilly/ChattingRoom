@@ -47,6 +47,7 @@ signOut= ()=>{
     else{
       return(
         <div className="App">
+          <h1 style={{margin:30,}} >SignIn:</h1>
           <SignInForm signIn={this.signIn} />
       </div>
       )

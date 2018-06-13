@@ -26,7 +26,12 @@ class SignInForm extends Component{
             onSubmit ={this.handleSubmit}
             style={styles.SignInForm}
                          >
-            userName:
+            <div 
+                className="signInIcon" 
+                style={styles.signInIcon} 
+                >
+                <i className="fas fa-sign-in-alt"></i>
+            </div>
             <input 
                 type='text' 
                 name='userName' 
@@ -55,8 +60,18 @@ const styles={
         alignItems: 'stretch',
         border:' 2px solid #999',
         borderRadius:' 0.5rem',
-        margin: '0.25rem',
+        margin: '5rem',
         padding: '0',
+    },
+
+    signInIcon: {
+        display: 'flex',
+        borderRadius: '0.5rem',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        color: '#ccc',
+        padding: '0 0.5rem',
+        fontSize:' 1.2rem',
     },
 
     input :{
