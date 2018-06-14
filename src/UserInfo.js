@@ -1,66 +1,38 @@
-import React, {Component}  from 'react'
-import { StyleSheet, css } from 'aphrodite'
+import React from 'react'
 
+import Avatar from './Avatar'
+import SignOut from './SignOut'
 
-class UserInfo extends Component {
-    handleClick =(ev) =>{
-        
-        this.props.signOut()
-        
-
-    }
-
-    render(){
-    return (
-        <div 
-            className={css(styles.UserInfo)}
-            style={{...styles.UserInfo,...this.props.style}}
-            >
-            <div className={css(styles.Avatar)} style={{...styles.Avatar,backgroundImage: `url(${this.props.user.imgUrl})`,}} ></div>
-            <div className={css(styles.user)} style={styles.user} >
-                {this.props.user.userName}
-            </div>
-            {/* <a href="#"> */}
-            <button className={css(styles.button)} onClick={this.handleClick.bind(this)} >
-                <i className="fas fa-sign-out-alt"  ></i>
-            </button>
-            {/* </a> */}
-      </div> 
-      )
-    }
+const UserInfo = ({ user, signOut }) => {
+  return (
+    <div
+      className="UserInfo"
+      style={styles.info}
+    >
+      <Avatar user={user} style={styles.avatar} />
+      <div className="user" style={styles.user}>
+        {user.displayName}
+      </div>
+      <SignOut signOut={signOut} />
+    </div>
+  )
 }
 
+const styles = {
+  info: {
+    marginBottom: '1rem',
+    display: 'flex',
+    alignItems: 'center',
+    padding: '0 1rem',
+  },
 
-const styles=  StyleSheet.create({
-    UserInfo:{
-        marginBottom: '1rem',
-        display: 'flex',
-        alignItems: 'center',
-    },
+  avatar: {
+    marginRight: '0.5rem',
+  },
 
-    Avatar:{
-        marginRight: '0.5rem',
-        height: '40px',
-        width: '40px',
-        borderRadius: '20px',
-    },
+  user: {
+    flex: 1,
+  },
+}
 
-    user:{
-        flex: 1,
-    },
-
-    button:{
-        border: 0,
-        padding: 0,
-        backgroundColor:' transparent',
-        color: 'rgba(255, 255, 255, 0.6)',
-        fontSize: '1.2rem',
-        transition: 'color 0.25s ease-out',
-        ':hover': {
-            color: 'white',
-        },
-    }
-
-})
-    
 export default UserInfo

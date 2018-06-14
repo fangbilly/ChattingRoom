@@ -1,39 +1,41 @@
 import React, { Component } from 'react'
+
 import Sidebar from './Sidebar'
 import Chat from './Chat'
 
-
-
 class Main extends Component {
-    state={
-        room:{
-            name:'xtern',
-            description:'xtern room',
-
-        },
+  state = {
+    room: {
+      name: 's2morning',
+      description: 'Chatter about the actual class',
     }
+  }
 
-    setRoom= (room) =>{
-        this.setState({room})
-    }
+  loadRoom = (room) => {
+    this.setState({ room })
+  }
 
-    render() {
-      return (
-        <div className='Main' style={styles} >
-            <Sidebar 
-                user={this.props.user} 
-                signOut={this.props.signOut} 
-                setRoom={this.setRoom} />
-            <Chat user={this.props.user} room={this.state.room} />
-        </div>    
-      )
-    }
+  render() {
+    return (
+      <div className="Main" style={styles}>
+        <Sidebar
+          user={this.props.user}
+          signOut={this.props.signOut}
+          loadRoom={this.loadRoom}
+        />
+        <Chat
+          user={this.props.user}
+          room={this.state.room}
+        />
+      </div>
+    )
+  }
 }
 
-const styles={
-    display:'flex',
-    alignItem:'stretch',
-    height:'100vh',
+const styles = {
+  display: 'flex',
+  alignItems: 'stretch',
+  height: '100vh',
 }
 
 export default Main

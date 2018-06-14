@@ -1,32 +1,26 @@
 import React from 'react'
-import UserInfo from './UserInfo';
-import RoomList from './RoomList';
 
+import UserInfo from './UserInfo'
+import RoomList from './RoomList'
 
-
-const Sidebar =(props)=> {
-   
+const Sidebar = ({ user, signOut, loadRoom }) => {
   return (
-    <aside 
+    <aside
       className="Sidebar"
       style={styles.sidebar}
-      >
-      <UserInfo user={props.user} style={styles.children} signOut={props.signOut}/>
-      <h1 
-        style={{
-          ...styles.children,
-          ...styles.h1
-        }}
-        >
-        XTBC 18
-        </h1>
-      <RoomList style={styles.children} setRoom={props.setRoom} />
-  </aside>
-  )  
+    >
+      <UserInfo
+        user={user}
+        signOut={signOut}
+      />
+      <h1 style={styles.h1}>XTBC 18</h1>
+      <RoomList loadRoom={loadRoom} />
+    </aside>
+  )
 }
 
-const styles ={
-  sidebar:{
+const styles = {
+  sidebar: {
     backgroundColor: '#333344',
     color: 'rgba(255, 255, 255, 0.8)',
     width: '12rem',
@@ -35,14 +29,11 @@ const styles ={
     flexDirection: 'column',
   },
 
-  children:{
-    padding: '0 1rem',
-  },
-
-  h1:{
+  h1: {
     color: 'white',
     fontSize: '1.2rem',
-    marginTop: '0',
+    marginTop: 0,
+    padding: '0 1rem',
   },
 }
 

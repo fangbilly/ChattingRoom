@@ -1,61 +1,67 @@
 import React, { Component } from 'react'
 
 import './App.css'
+import { auth } from './base'
+import SignIn from './SignIn'
 import Main from './Main'
-import SignInForm from './SignIn'
-
 
 class App extends Component {
-  state={
-    signInStatus:false,
-    currentUser:{},
-    
+  state = {
+    user: {},
   }
 
   componentWillMount() {
     const user = JSON.parse(localStorage.getItem('user'))
 
     if (user) {
-      this.setState({ currentUser:user })
+      this.setState({ user })
     }
+
+    auth.onAuthStateChanged(
+      user => {
+        if (user) {
+          this.handleAuth(user)
+        } else {
+          this.handleUnauth()
+        }
+      }
+    )
   }
 
-  signIn= (userName,imgUrl)=>{
-    const currentUser = {
-      userID:Date.now(),
-      userName,
-      imgUrl,
+  handleAuth = (oauthUser) => {
+    const user = {
+      email: oauthUser.email,
+      uid: oauthUser.uid,
+      displayName: oauthUser.displayName,
     }
-    this.setState({
-      currentUser,
-      signInStatus:true,    
-    })
-    localStorage.setItem('user',JSON.stringify(currentUser))
-}
+    this.setState({ user })
+    localStorage.setItem('user', JSON.stringify(user))
+  }
 
-signOut= ()=>{
-  this.setState({
-    currentUser:{},
-    signInStatus:false,  
-  })
-  localStorage.removeItem('user')
-}
+  signedIn = () => {
+    return this.state.user.uid
+  }
+
+  signOut = () => {
+    auth.signOut()
+  }
+
+  handleUnauth = () => {
+    this.setState({ user: {} })
+    localStorage.removeItem('user')
+  }
 
   render() {
-       return (
+    return (
       <div className="App">
-      {
-        this.state.signInStatus
-        ?<Main user={this.state.currentUser} signOut={this.signOut}/>
-        :<div className="AppSignIn">
-            <h1 style={{margin:30,}} >SignIn:</h1>
-            <SignInForm signIn={this.signIn} /> 
-          </div>
-      }
+        {
+          this.signedIn()
+            ? <Main user={this.state.user} signOut={this.signOut} />
+            : <SignIn />
+        }
       </div>
-    )}
-   
-
+    )
+  }
 }
 
 export default App

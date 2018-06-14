@@ -1,73 +1,33 @@
 import React from 'react'
+
 import Avatar from './Avatar'
+import Metadata from './Metadata'
 
+const Message = ({ message }) => {
+  return (
+    <div className="Message" style={styles.message}>
+      <Avatar user={message.user} />
+      <div className="details" style={styles.details}>
+        <Metadata message={message} />
+        <div className="body">
+          {message.body}
+        </div>
+      </div>
+    </div>
+  )
+}
 
+const styles = {
+  message: {
+    display: 'flex',
+    marginTop: '1rem',
+    padding: '0 1rem',
+  },
 
-const Message = (props) =>{
-    return (
-        <div 
-            className='Message'
-            style={styles.Message} >
-            <Avatar imgUrl={props.Message.imgUrl} />
-            <div 
-                className='detials'
-                style={styles.details}
-                >
-                <div 
-                    className='Metadata'
-                    style={styles.Metadata}
-                    >
-                    <div 
-                        className="user"
-                        style={styles.user}
-                        >
-                        {props.Message.userName}
-                    </div>
+  details: {
+    flex: 1,
+    paddingLeft: '0.5rem',
+  }
+}
 
-                    <div 
-                        className="time"
-                        style={styles.time}
-                        >
-                        {props.Message.messageTime}
-                    </div>
-                </div>
-                <div className='body'>
-                    {props.Message.body}
-                </div>
-            </div> 
-           
-
-        </div>   
-      )
-    }
-
-    const styles={
-        Message: {
-            display: 'flex',
-            marginTop: '1rem',
-            padding: '0 1rem',
-        },
-
-        details: {
-            flex: 1,
-            paddingLeft: '0.5rem',
-        },
-        
-        Metadata: {
-            display: 'flex',
-            alignItems: 'baseline',
-        },
-
-        user: {
-            fontWeight: 'bold',
-            marginRight: '0.5rem',
-        },
-
-        time: {
-            color:' #999',
-            fontSize: '0.8rem',
-        },
-    }
-
-    
 export default Message
