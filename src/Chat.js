@@ -23,18 +23,32 @@ class Chat extends Component {
     }
 
     componentWillMount() {
-            base.syncState('general', {
-              context: this,
-              state: 'general',
-              asArray: true,
-            })
+        base.syncState('general', {
+            context: this,
+            state: 'general',
+            asArray: true,
+        })
 
-            base.syncState('random', {
-                context: this,
-                state: 'random',
-                asArray: true,
-              })
-          }
+        base.syncState('random', {
+            context: this,
+            state: 'random',
+            asArray: true,
+            })
+    }
+
+    componentDidUpdate(){
+        base.syncState('general', {
+            context: this,
+            state: 'general',
+            asArray: true,
+        })
+
+        base.syncState('random', {
+            context: this,
+            state: 'random',
+            asArray: true,
+            })
+    }
 
     addMessage= (body,messageRoom)=>{
         const messages=[...this.props.messageRoom]
