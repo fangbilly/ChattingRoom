@@ -14,7 +14,7 @@ class Chat extends Component {
             general:[{
                 id:'Date.now()',
                 userName:'this.props.user.userName',
-                body:'',
+                body:'' ,
                 imgUrl:'this.props.user.imgUrl',
                 messageTime:'new Date().toLocaleString()',
             },],         
