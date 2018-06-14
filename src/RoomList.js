@@ -1,8 +1,14 @@
-import React from 'react'
+import React,{Component} from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-const RoomList = (props) =>{
-      return (
+class RoomList extends Component{
+    state={
+        rooms:[],
+        
+    }
+
+     rander() 
+    {return (
         <nav 
             className={css(styles.RoomList)}
             style={props.style}
@@ -15,7 +21,7 @@ const RoomList = (props) =>{
                 <a href="#" className={css(styles.a)}  onClick={props.setRoom('random')}  style={styles.a}>random</a></li>
             </ul>
         </nav>
-        )
+        )}
     }
 
     const styles=  StyleSheet.create({

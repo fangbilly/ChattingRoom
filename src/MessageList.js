@@ -12,8 +12,8 @@ const MessageList = (props) =>{
                 className="roomAnnouncement"
                 style={styles.roomAnnouncement}
                 >
-                <h3 style={styles.h3} >#general</h3>
-                <p>This is the very beginning of the #general room.</p>
+                <h3 style={styles.h3} >#{props.room}</h3>
+                <p>This is the very beginning of the #{props.room} room.</p>
             </div>
 
             {props.messages.map(msg => (<Message key={msg.id} Message={msg} />

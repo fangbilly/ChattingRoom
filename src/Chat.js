@@ -11,7 +11,7 @@ class Chat extends Component {
     constructor(){
         super()
         this.state={
-            general:[{
+            messages:[{
                 id:'Date.now()',
                 userName:'this.props.user.userName',
                 body:'' ,
@@ -58,8 +58,8 @@ class Chat extends Component {
         <div 
             className='Chat'
             style={styles} >
-            <ChatHeader/>
-            <MessageList messages={this.state[this.props.messageRoom]}  />
+            <ChatHeader room={this.props.room} />
+            <MessageList messages={this.state.messages} room={this.props.room} />
             <MessageForm addMessage={this.addMessage} />
 
         </div>   
