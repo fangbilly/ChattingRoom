@@ -11,36 +11,27 @@ class Chat extends Component {
     constructor(){
         super()
         this.state={
-            messages:[
-                {
-                    id:1, 
-                    userName:'Dana',
-                    body:'what\'s for dinner',
-                    imgUrl:'https://api.adorable.io/avatars/32/dana@fretless.com',
-                    messageTime:'6/13/2018, 9:32:59 AM',
-                },
-                {
-                    id:2, 
-                    userName:'Davey', 
-                    body:'wut abot spellbork?',
-                    imgUrl: 'https://api.adorable.io/avatars/32/davey@getfretless.com',
-                    messageTime:'6/13/2018, 9:33:29 AM',
-                },
-               
-            ],
+            general:[],         
+            random:[],
         }
     }
 
     componentWillMount() {
-            base.syncState('messages', {
+            base.syncState('general', {
               context: this,
-              state: 'messages',
+              state: 'general',
               asArray: true,
             })
+
+            base.syncState('random', {
+                context: this,
+                state: 'random',
+                asArray: true,
+              })
           }
 
-    addMessage= (body)=>{
-        const messages=[...this.state.messages]
+    addMessage= (body,messageRoom)=>{
+        const messages=[...this.state.messageRoom]
         messages.push(
             {
                 id:Date.now(),
@@ -50,16 +41,19 @@ class Chat extends Component {
                 messageTime:new Date().toLocaleString(),
             },
         )
-        this.setState({messages})
+        this.setState({messageRoom:messages})
     }
 
+    
+
     render() {
+        debugger
       return (
         <div 
             className='Chat'
             style={styles} >
             <ChatHeader/>
-            <MessageList messages={this.state.messages} />
+            <MessageList messages={this.state[this.props.messageRoom]}  />
             <MessageForm addMessage={this.addMessage} />
 
         </div>   

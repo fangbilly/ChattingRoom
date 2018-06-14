@@ -20,7 +20,7 @@ const Sidebar =(props)=> {
         >
         XTBC 18
         </h1>
-      <RoomList style={styles.children}/>
+      <RoomList style={styles.children} setRoom={props.setRoom} />
   </aside>
   )  
 }

@@ -9,8 +9,10 @@ const RoomList = (props) =>{
             >
             <h2 className={css(styles.h2)} style={styles.h2} >Rooms</h2>
             <ul className={css(styles.ul)}  style={styles.ul}>
-            <li className={css(styles.li)}  style={styles.li}><a href="#" className={css(styles.a)}    style={styles.a}>general</a></li>
-            <li className={css(styles.li)}  style={styles.li}><a href="#" className={css(styles.a)}    style={styles.a}>random</a></li>
+            <li className={css(styles.li)}  style={styles.li}>
+                <a href="#" className={css(styles.a)}  onClick={props.setRoom('general')}  style={styles.a}>general</a></li>
+            <li className={css(styles.li)}  style={styles.li}>
+                <a href="#" className={css(styles.a)}  onClick={props.setRoom('random')}  style={styles.a}>random</a></li>
             </ul>
         </nav>
         )
