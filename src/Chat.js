@@ -11,7 +11,13 @@ class Chat extends Component {
     constructor(){
         super()
         this.state={
-            general:[],         
+            general:[{
+                id:'Date.now()',
+                userName:'this.props.user.userName',
+                body:'',
+                imgUrl:'this.props.user.imgUrl',
+                messageTime:'new Date().toLocaleString()',
+            },],         
             random:[],
         }
     }
@@ -31,7 +37,7 @@ class Chat extends Component {
           }
 
     addMessage= (body,messageRoom)=>{
-        const messages=[...this.state.messageRoom]
+        const messages=[...this.props.messageRoom]
         messages.push(
             {
                 id:Date.now(),
