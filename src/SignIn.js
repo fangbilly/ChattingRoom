@@ -51,6 +51,15 @@ class SignIn extends Component {
             </button>
             <div>or</div> */}
 
+             <button
+              type="button"
+              className={css(styles.button)}
+              onClick={this.authenticate}
+            >
+              <i className={`far fa-envelope ${css(styles.brandIcon)}`}></i>
+              Sign in with Email
+            </button>
+
             <button
               type="button"
               className={css(styles.button)}
