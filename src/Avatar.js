@@ -7,7 +7,10 @@ const Avatar = ({ user, style }) => {
       style={{
         ...styles,
         ...style,
-        background: `url(https://api.adorable.io/avatars/40/${user.email})`,
+        background: `url(${user.imgUrl})`,
+        backgroundSize:'100% 100%',
+        backgroundRepeat: 'no-repeat',
+        //background: `url(https://api.adorable.io/avatars/40/${user.email})`,
       }}
     ></div>
   )
@@ -18,6 +21,7 @@ const styles = {
   width: '40px',
   fontSize: '1rem',
   borderRadius: '20px',
+  
 }
 
 export default Avatar
