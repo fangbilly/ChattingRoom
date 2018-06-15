@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-import { auth, googleProvider } from './base'
+import { auth, googleProvider, githubProvider } from './base'
 
 class SignIn extends Component {
   state = {
@@ -17,8 +17,12 @@ class SignIn extends Component {
     // do something?
   }
 
-  authenticate = () => {
+  googleAuthenticate = () => {
     auth.signInWithPopup(googleProvider)
+  }
+
+  githubAuthenticate = () => {
+    auth.signInWithPopup(githubProvider)
   }
 
   render() {
@@ -51,19 +55,19 @@ class SignIn extends Component {
             </button>
             <div>or</div> */}
 
-             <button
+            <button
               type="button"
               className={css(styles.button)}
-              onClick={this.authenticate}
+              onClick={this.githubAuthenticate}
             >
-              <i className={`far fa-envelope ${css(styles.brandIcon)}`}></i>
-              Sign in with Email
+              <i className={`fab fa-github ${css(styles.brandIcon)}`}></i>
+              Sign in with Github
             </button>
 
             <button
               type="button"
               className={css(styles.button)}
-              onClick={this.authenticate}
+              onClick={this.googleAuthenticate}
             >
               <i className={`fab fa-google ${css(styles.brandIcon)}`}></i>
               Sign in with Google
