@@ -7,7 +7,7 @@ const Avatar = ({ user, style }) => {
       style={{
         ...styles,
         ...style,
-        background: `url(https://api.adorable.io/avatars/40/${user.email})`,
+        background: `url(${user.imgUrl})`,
       }}
     ></div>
   )

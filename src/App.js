@@ -29,10 +29,12 @@ class App extends Component {
   }
 
   handleAuth = (oauthUser) => {
+    debugger
     const user = {
       email: oauthUser.email,
       uid: oauthUser.uid,
       displayName: oauthUser.displayName,
+      imgUrl: oauthUser.photoURL,
     }
     this.setState({ user })
     localStorage.setItem('user', JSON.stringify(user))
