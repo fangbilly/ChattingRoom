@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   handleAuth = (oauthUser) => {
-    debugger
     const user = {
       email: oauthUser.email,
       uid: oauthUser.uid,
