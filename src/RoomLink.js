@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite'
+import { NavLink } from 'react-router-dom'
 
 const RoomLink = ({ room, loadRoom }) => {
   const handleClick = (ev) => {
