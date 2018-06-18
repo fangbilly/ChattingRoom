@@ -16,7 +16,6 @@ class RoomList extends Component {
       {
         context: this,
         state: 'rooms',
-        then:()=>{this.props.setRoomList(this.state.rooms)},
       }
     )
   }

@@ -19,8 +19,7 @@ class Main extends Component {
       {
         context: this,
         state: 'roomList',
-        then:()=>{debugger
-          this.loadRoom(this.props.match.params.roomName)},
+        then:()=>{this.loadRoom(this.props.match.params.roomName)},
       }
     )    
   }
