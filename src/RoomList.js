@@ -16,6 +16,7 @@ class RoomList extends Component {
       {
         context: this,
         state: 'rooms',
+        then:()=>{this.props.setRoomList(this.state.rooms)},
       }
     )
   }
@@ -25,6 +26,7 @@ class RoomList extends Component {
     const rooms = {...this.state.rooms}
     rooms[room.name] = room
     this.setState({ rooms })
+    
   }
 
   render() {
