@@ -4,13 +4,11 @@ import Sidebar from './Sidebar'
 import Chat from './Chat'
 
 class Main extends Component {
-  constructor(props){
-    super(props)
+  constructor() {
+    super()
+
     this.state = {
-      room: {
-        name: 's2morning',
-        description: 'Chatter about the actual class',
-      }
+      room: {}
     }
   }
 

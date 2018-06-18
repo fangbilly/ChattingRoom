@@ -59,7 +59,7 @@ class RoomForm extends Component {
               <button
                 type="button"
                 className={css(styles.button, styles.cancel)}
-                onClick={this.props.history.goBack()}
+                onClick={this.props.history.goBack}
               >
                 Cancel
               </button>
