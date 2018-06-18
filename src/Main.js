@@ -12,9 +12,20 @@ class Main extends Component {
         description: 'Chatter about the actual class',
       }
     }
+  }
+
+  componentDidMount() {
     this.loadRoom({
-      name:props.match.params.roomName,
+      name: this.props.match.params.roomName,
     })
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.roomName !== this.props.match.params.roomName) {
+      this.loadRoom({
+        name: this.props.match.params.roomName,
+      })
+    }
   }
 
   loadRoom = (room) => {
