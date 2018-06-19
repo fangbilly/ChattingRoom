@@ -32,8 +32,12 @@ class Main extends Component {
 
   loadRoom = (roomName) => {
     const room = this.state.roomList[roomName]
-     this.setState({ room })
-  }
+    if (room) {
+      this.setState({ room })
+    } else {
+      const realRoomName = Object.keys(this.state.rooms)[0]
+      this.props.history.push(`/rooms/${realRoomName}`)
+    }  }
 
   setRoomList= (roomList)=>{
     console.log('setRoomlist')
