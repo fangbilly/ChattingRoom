@@ -21,7 +21,7 @@ const ChatHeader = ({ room, removeRoom }) => {
         style={styles.button}
         onClick={handleClick}
       >
-      
+      {/* { room.name !== "general" &&( */}
         <i className="far fa-trash-alt"></i>
       </button>
     </div>
