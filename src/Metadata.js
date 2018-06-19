@@ -4,7 +4,7 @@ const Metadata = ({ message }) => {
   return (
     <div className="Metadata" style={styles.data}>
       <div style={styles.user}>{message.user.displayName}</div>
-      <div style={styles.time}>1:10 PM</div>
+      <div style={styles.time}>{message.messageTime}</div>
     </div>
   )
 }
