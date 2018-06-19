@@ -32,7 +32,7 @@ class RoomList extends Component {
     return (
       <Switch>
         <Route
-          path="/rooms/general/new"
+          path="/rooms/new"
           render={
             navProps => (
               <RoomForm
@@ -54,7 +54,7 @@ class RoomList extends Component {
                     <h2 className={css(styles.h2)}>Rooms</h2>
                     <Link
                       className={css(styles.button)}
-                      to="/rooms/general/new"
+                      to="/rooms/new"
                     >
                       <i className="fas fa-plus-circle" title="Add room"></i>
                     </Link>
@@ -78,12 +78,17 @@ class RoomList extends Component {
                   <ul className={css(styles.list)}>
                     { 
                       Object.keys(this.state.rooms).map(roomName => (
-                        !this.state.rooms[roomName].public &&
+                        !this.state.rooms[roomName].public
+                        ) &&
+                        this.state.rooms[roomName].members.map(Element =>(
+                          Element.label === `${this.props.user.displayName} (${this.props.user.email})`
+                         &&
                         (<RoomLink
                           key={roomName}
                           room={this.state.rooms[roomName]}
                         />)
-                      ))
+                        ))
+                      )
                     }
                   </ul>
                 </div>
