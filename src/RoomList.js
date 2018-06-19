@@ -59,12 +59,13 @@ class RoomList extends Component {
                   </Link>
                 </div>
                 <ul className={css(styles.list)}>
-                  {
+                  { 
                     Object.keys(this.state.rooms).map(roomName => (
-                      <RoomLink
+                      this.state.rooms[roomName].public &&
+                      (<RoomLink
                         key={roomName}
                         room={this.state.rooms[roomName]}
-                      />
+                      />)
                     ))
                   }
                 </ul>
