@@ -31,8 +31,9 @@ class Main extends Component {
   }
 
   loadRoom = (roomName) => {
-    if (roomName === 'new') return null
-
+    if (roomName === 'newPrivate') return null
+    if (roomName === 'newPublic') return null
+    
     const room = this.state.rooms[roomName]
     if (room) {
       this.setState({ room })

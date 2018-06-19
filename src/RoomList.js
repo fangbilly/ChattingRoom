@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { StyleSheet, css } from 'aphrodite'
 import { Route, Switch, Link } from 'react-router-dom'
 import RoomLink from './RoomLink'
-import RoomForm from './RoomForm'
+import PublicRoomForm from './PublicRoomForm'
+import PrivateRoomForm from './PrivateRoomForm'
 import base from './base'
 
 class RoomList extends Component {
@@ -32,10 +33,22 @@ class RoomList extends Component {
     return (
       <Switch>
         <Route
-          path="/rooms/new"
+          path="/rooms/newPrivate"
           render={
             navProps => (
-              <RoomForm
+              <PrivateRoomForm
+                addRoom={this.addRoom}
+                users={this.props.users}
+                {...navProps}
+              />
+            )
+          }
+        />
+        <Route
+          path="/rooms/newPublic"
+          render={
+            navProps => (
+              <PublicRoomForm
                 addRoom={this.addRoom}
                 users={this.props.users}
                 {...navProps}
@@ -54,7 +67,7 @@ class RoomList extends Component {
                     <h2 className={css(styles.h2)}>Rooms</h2>
                     <Link
                       className={css(styles.button)}
-                      to="/rooms/new"
+                      to="/rooms/newPublic"
                     >
                       <i className="fas fa-plus-circle" title="Add room"></i>
                     </Link>
@@ -74,6 +87,12 @@ class RoomList extends Component {
                 <div className="private Rooms">
                   <div className={css(styles.heading)}>
                     <h2 className={css(styles.h2)}>Private Rooms</h2>
+                    <Link
+                      className={css(styles.button)}
+                      to="/rooms/newPrivate"
+                    >
+                      <i className="fas fa-plus-circle" title="Add room"></i>
+                    </Link>
                   </div>
                   <ul className={css(styles.list)}>
                     { 
