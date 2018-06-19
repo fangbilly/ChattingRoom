@@ -32,7 +32,7 @@ class RoomList extends Component {
     return (
       <Switch>
         <Route
-          path="/rooms/new"
+          path="/rooms/general/new"
           render={
             navProps => (
               <RoomForm
@@ -52,7 +52,7 @@ class RoomList extends Component {
                   <h2 className={css(styles.h2)}>Rooms</h2>
                   <Link
                     className={css(styles.button)}
-                    to="/rooms/new"
+                    to="/rooms/general/new"
                   >
                     <i className="fas fa-plus-circle" title="Add room"></i>
                   </Link>
