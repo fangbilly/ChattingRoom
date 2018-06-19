@@ -31,6 +31,8 @@ class Main extends Component {
   }
 
   loadRoom = (roomName) => {
+   
+
     const room = this.state.rooms[roomName]
     if (room) {
       this.setState({ room })
@@ -39,6 +41,7 @@ class Main extends Component {
     }  }
 
   removeRoom = (room) => {
+    if (room.name === 'general') return null
     const rooms = {...this.state.rooms}
     rooms[room.name] = null
 

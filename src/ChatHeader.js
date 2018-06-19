@@ -2,6 +2,7 @@ import React from 'react'
 
 const ChatHeader = ({ room, removeRoom }) => {
   const handleClick = (ev) => {
+    if (room.name === 'general') return null
     if (window.confirm(`Are you sure about deleteing room #${room.name}?`)) {
       removeRoom(room)
     }
@@ -16,10 +17,11 @@ const ChatHeader = ({ room, removeRoom }) => {
           {room.description}
         </p>
       </div>
-      <button
+      <button 
         style={styles.button}
         onClick={handleClick}
       >
+      
         <i className="far fa-trash-alt"></i>
       </button>
     </div>
@@ -56,6 +58,7 @@ const styles = {
     color: 'rgba(0,0,0, 0.4)',
     fontSize: '1rem',
   },
+
 }
 
 export default ChatHeader
