@@ -31,7 +31,8 @@ class Main extends Component {
   }
 
   loadRoom = (roomName) => {
-    this.setState({room:this.state.roomList[roomName]})
+    const room = this.state.roomList[roomName]
+     this.setState({ room })
   }
 
   setRoomList= (roomList)=>{
