@@ -49,26 +49,44 @@ class RoomList extends Component {
               <nav
                 className={`RoomList ${css(styles.nav)}`}
               >
-                <div className={css(styles.heading)}>
-                  <h2 className={css(styles.h2)}>Rooms</h2>
-                  <Link
-                    className={css(styles.button)}
-                    to="/rooms/general/new"
-                  >
-                    <i className="fas fa-plus-circle" title="Add room"></i>
-                  </Link>
+                <div className="public rooms">
+                  <div className={css(styles.heading)}>
+                    <h2 className={css(styles.h2)}>Rooms</h2>
+                    <Link
+                      className={css(styles.button)}
+                      to="/rooms/general/new"
+                    >
+                      <i className="fas fa-plus-circle" title="Add room"></i>
+                    </Link>
+                  </div>
+                  <ul className={css(styles.list)}>
+                    { 
+                      Object.keys(this.state.rooms).map(roomName => (
+                        this.state.rooms[roomName].public &&
+                        (<RoomLink
+                          key={roomName}
+                          room={this.state.rooms[roomName]}
+                        />)
+                      ))
+                    }
+                  </ul>
                 </div>
-                <ul className={css(styles.list)}>
-                  { 
-                    Object.keys(this.state.rooms).map(roomName => (
-                      this.state.rooms[roomName].public &&
-                      (<RoomLink
-                        key={roomName}
-                        room={this.state.rooms[roomName]}
-                      />)
-                    ))
-                  }
-                </ul>
+                <div className="private Chats">
+                  <div className={css(styles.heading)}>
+                    <h2 className={css(styles.h2)}>Private Chats</h2>
+                  </div>
+                  <ul className={css(styles.list)}>
+                    { 
+                      Object.keys(this.state.rooms).map(roomName => (
+                        !this.state.rooms[roomName].public &&
+                        (<RoomLink
+                          key={roomName}
+                          room={this.state.rooms[roomName]}
+                        />)
+                      ))
+                    }
+                  </ul>
+                </div>
               </nav>
             )
           }
