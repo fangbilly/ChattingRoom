@@ -6,8 +6,8 @@ const Metadata = ({ message }) => {
     <div className="Metadata" style={styles.data}>
       <div style={styles.user}>{message.user.displayName}</div>
       <div style={styles.time}>
-        <span title={moment(message.createdAt).format('D MMM @ h:mm a')}>
-          { moment(message.createdAt).fromNow() }
+        <span title={moment(message.createdAt).fromNow()}>
+          { moment(message.createdAt).format('D MMM  h:mm a') }
         </span>
       </div>
     </div>
