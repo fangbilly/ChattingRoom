@@ -9,7 +9,7 @@ class Main extends Component {
 
     this.state = {
       room: {},
-      roomList:{},
+      rooms:{},
     }
   }
 
@@ -18,7 +18,7 @@ class Main extends Component {
       'rooms',
       {
         context: this,
-        state: 'roomList',
+        state: 'rooms',
         then:()=>{this.loadRoom(this.props.match.params.roomName)},
       }
     )    
@@ -31,17 +31,12 @@ class Main extends Component {
   }
 
   loadRoom = (roomName) => {
-    const room = this.state.roomList[roomName]
+    const room = this.state.rooms[roomName]
     if (room) {
       this.setState({ room })
     } else {
       this.loadValidRoom()
     }  }
-
-  setRoomList= (roomList)=>{
-    console.log('setRoomlist')
-    this.setState({roomList})
-  }
 
   removeRoom = (room) => {
     const rooms = {...this.state.rooms}
@@ -66,7 +61,6 @@ class Main extends Component {
         <Sidebar
           user={this.props.user}
           signOut={this.props.signOut}
-          setRoomList={this.setRoomList}
         />
         <Chat
           user={this.props.user}

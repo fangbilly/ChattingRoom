@@ -2,7 +2,7 @@ import React from 'react'
 
 const ChatHeader = ({ room, removeRoom }) => {
   const handleClick = (ev) => {
-    if (window.confirm('Are you sure?')) {
+    if (window.confirm(`Are you sure about deleteing room #${room.name}?`)) {
       removeRoom(room)
     }
   }
