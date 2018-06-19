@@ -1,16 +1,16 @@
 import React from 'react'
 
 const Avatar = ({ user, style }) => {
+  const imgUrl = user.imgUrl || `https://api.adorable.io/avatars/40/${user.email}`
   return (
     <div
       className="Avatar"
       style={{
         ...styles,
         ...style,
-        backgroundImage: `url(${user.imgUrl})`,
+        backgroundImage: `url(${imgUrl})`,
         backgroundSize:'100% 100%',
         backgroundRepeat: 'no-repeat',
-        //background: `url(https://api.adorable.io/avatars/40/${user.email})`,
       }}
     ></div>
   )
