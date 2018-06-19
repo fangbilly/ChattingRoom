@@ -71,9 +71,9 @@ class RoomList extends Component {
                     }
                   </ul>
                 </div>
-                <div className="private Chats">
+                <div className="private Rooms">
                   <div className={css(styles.heading)}>
-                    <h2 className={css(styles.h2)}>Private Chats</h2>
+                    <h2 className={css(styles.h2)}>Private Rooms</h2>
                   </div>
                   <ul className={css(styles.list)}>
                     { 
