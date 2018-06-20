@@ -7,6 +7,14 @@ const ChatHeader = ({ room, removeRoom }) => {
       removeRoom(room)
     }
   }
+
+  const showMembers =(ev) =>{
+    let membersList=
+    room.members.map(member=>member.label).join(', ').replace(/(.*),(.*)$/, "$1 &$2")
+    
+    alert(`This room has members: ${membersList} `)
+  }
+
   return (
     <div className="ChatHeader" style={styles.header}>
       <div className="roomInfo">
@@ -17,6 +25,12 @@ const ChatHeader = ({ room, removeRoom }) => {
           {room.description}
         </p>
       </div>
+      <button 
+            style={styles.button}
+            onClick={showMembers}
+          >
+            <i className="fas fa-users"></i>
+      </button>
       <button 
         style={styles.button}
         onClick={handleClick}
