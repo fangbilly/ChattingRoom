@@ -9,10 +9,14 @@ const ChatHeader = ({ room, removeRoom }) => {
   }
 
   const showMembers =(ev) =>{
+    if(room.members){
     let membersList=
     room.members.map(member=>member.label).join(', ').replace(/(.*),(.*)$/, "$1 &$2")
     
     alert(`This room has members: ${membersList} `)
+    }else{
+      alert(`This is a public room !`)
+    }
   }
 
   return (
@@ -28,12 +32,14 @@ const ChatHeader = ({ room, removeRoom }) => {
       <button 
             style={styles.button}
             onClick={showMembers}
+            title='show members'
           >
             <i className="fas fa-users"></i>
       </button>
       <button 
         style={styles.button}
         onClick={handleClick}
+        title='delete room'
       >
       {/* { room.name !== "general" &&( */}
         <i className="far fa-trash-alt"></i>
